@@ -1,18 +1,20 @@
 #!/usr/bin/env python3
 
-import os,subprocess
+import os
+import subprocess
 from os.path import expanduser
 from fnmatch import fnmatch
 
-base=expanduser('~/Scripts/')
-g='.git'
+base = expanduser('~/Scripts/')
+g = '.git'
 
 def findgit():
-    repo=[]
+    repo = []
     for root, dirs, files in os.walk(base):
         if g in dirs:
             repo.append(root)
     return repo
+
 
 def gpull(data):
     for line in data:
@@ -21,10 +23,10 @@ def gpull(data):
         subprocess.run('git pull', shell=True)
 
 
-
 def main():
-    data=findgit()
+    data = findgit()
     gpull(data)
+
 
 if __name__ == '__main__':
     main()
