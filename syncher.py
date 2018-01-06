@@ -3,10 +3,10 @@
 import os
 import subprocess
 from os.path import expanduser
-from fnmatch import fnmatch
 
 base = expanduser('~/Scripts/')
 g = '.git'
+
 
 def findgit():
     repo = []
