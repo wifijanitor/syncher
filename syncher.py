@@ -3,11 +3,13 @@
 import os
 import subprocess
 from os.path import expanduser
+from logger import  Logged
 
 base = expanduser('~/Scripts/')
 g = '.git'
 
 
+@Logged()
 def findgit():
     repo = []
     for root, dirs, files in os.walk(base):
@@ -16,6 +18,7 @@ def findgit():
     return repo
 
 
+@Logged()
 def gpull(data):
     for line in data:
         os.chdir(line)
