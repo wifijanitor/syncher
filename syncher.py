@@ -3,7 +3,7 @@
 import os
 import subprocess
 from os.path import expanduser
-from logger import  Logged
+from logger import Logged
 
 base = expanduser('~/Scripts/')
 g = '.git'
