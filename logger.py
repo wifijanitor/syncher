@@ -31,9 +31,11 @@ with value of name_override if it exists"""
 
 
 class Logged(object):
-    '''Logging decorator that allows you to log with a
-specific logger.
-'''
+    """
+    Logging decorator that allows you to log with a
+    specific logger.
+    """
+
     # Customize these messages
     ENTRY_MESSAGE = 'Entering {}'
     EXIT_MESSAGE = 'Exiting {}'
@@ -42,10 +44,12 @@ specific logger.
         self.logger = logger
 
     def __call__(self, func):
-        '''Returns a wrapper that wraps func.
-The wrapper will log the entry and exit points of the function
-with logging.INFO level.
-'''
+        """
+        Returns a wrapper that wraps func.
+        The wrapper will log the entry and exit points of the function
+        with logging.INFO level.
+        """
+
         # set logger if it was not set earlier
         if not self.logger:
             self.logger = logger
